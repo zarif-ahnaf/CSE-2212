@@ -3,22 +3,21 @@ using namespace std;
 int main()
 {
     int nodes, edges, u, v;
-    vector<int> adj[1000];
-    int visited[100];
-    int cost[100];
-    int parent[100];
-
     cin >> nodes >> edges;
 
+    vector<int> adj[1000];
+    int cost[100];
+    int visited[100];
+    int parent[100];
     while (edges--)
     {
         cin >> u >> v;
-        adj[u].push_back(v);
         adj[v].push_back(u);
+        adj[u].push_back(v);
     }
+
     int s, d;
     cin >> s >> d;
-
     queue<int> q;
     q.push(s);
     visited[s] = 1;
@@ -28,11 +27,10 @@ int main()
     {
         int f = q.front();
         q.pop();
-
         for (int i = 0; i < adj[f].size(); i++)
         {
             int v1 = adj[f][i];
-            if (visited[v1] == 0)
+            if (!visited[v1])
             {
                 visited[v1] = 1;
                 cost[v1] = cost[f] + 1;
@@ -41,7 +39,7 @@ int main()
             }
         }
     }
-    cout << endl;
+
     cout << cost[d] << endl;
     cout << parent[d] << endl;
 }

@@ -3,29 +3,30 @@ using namespace std;
 
 int main()
 {
-    int node, edge, u, v;
-    cin >> node >> edge;
+    int nodes, edges, u, v;
     vector<int> adj[1000];
-    int visited[100], parent[100], cost[100] = {0};
-    for (int i = 0; i < edge; i++)
+    int visited[100];
+    int cost[100];
+    int parent[100];
+
+    cin >> nodes >> edges;
+    while (edges--)
     {
         cin >> u >> v;
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    int s, d;
-    cout << "Enter Search Node:";
-    cin >> s;
-    cout << "Enter Destination Node:";
-    cin >> d;
 
+    int s, d;
+    cin >> s >> d;
     queue<int> q;
     q.push(s);
     visited[s] = 1;
-    parent[s] = 0;
     cost[s] = 0;
+    parent[s] = 0;
     while (!q.empty())
     {
+
         int f = q.front();
         q.pop();
 

@@ -1,59 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-vector<int> nodeNeighbour[100002];
-bool isVisited[100002];
-/*
-5 4
-1 2
-1 3
-3 4
-4 5
-1
-*/
+
+vector<int> nodeNeighbour[1000];
+bool isVisited[1000];
 
 int main()
 {
-    int nodes;
-    cin >> nodes;
-    int edges;
-    cin >> edges;
+    int nodes, edges, u, v;
+    cin >> nodes >> edges;
     for (int i = 0; i < nodes; i++)
     {
         isVisited[i + 1] = false;
     }
 
-    for (int i = 0; i < edges; i++)
+    while (edges--)
     {
-        int u, v;
         cin >> u >> v;
         nodeNeighbour[u].push_back(v);
         nodeNeighbour[v].push_back(u);
     }
 
-    int startNode;
-    cin >> startNode;
+    int start;
+    cin >> start;
 
     stack<int> s;
-    s.push(startNode);
-
+    s.push(start);
     while (!s.empty())
     {
         int popped = s.top();
         s.pop();
+
         if (!isVisited[popped])
         {
             isVisited[popped] = true;
-            cout << popped << " ";
         }
-        for (int n : nodeNeighbour[popped])
+        for (auto p : nodeNeighbour[popped])
         {
-            if (!isVisited[n])
+            if (!isVisited[p])
             {
-                s.push(n);
+                s.push(p);
             }
         }
     }
-
-    return 0;
 }
