@@ -11,6 +11,11 @@
         "string": "cpp",
         "vector": "cpp",
         "ostream": "cpp",
-        "coroutine": "cpp"
+        "coroutine": "cpp",
+        "print": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp",
+        "format": "cpp",
+        "iostream": "cpp"
     }
 }
