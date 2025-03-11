@@ -29,6 +29,7 @@
         "chrono": "cpp",
         "charconv": "cpp",
         "initializer_list": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "tuple": "cpp"
     }
 }
