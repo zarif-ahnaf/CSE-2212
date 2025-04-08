@@ -30,6 +30,11 @@
         "charconv": "cpp",
         "initializer_list": "cpp",
         "valarray": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "forward_list": "cpp"
     }
 }
