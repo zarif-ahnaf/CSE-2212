@@ -3,14 +3,6 @@ using namespace std;
 typedef long long ll;
 vector<int> nodeNeighbour[100002];
 bool isVisited[100002];
-/*
-5 4
-1 2
-1 3
-3 4
-4 5
-1
-*/
 
 int main()
 {
