@@ -6,8 +6,6 @@ int dis[401][401];
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
     int n, m;
     cin >> n >> m;
@@ -16,10 +14,10 @@ int main()
     {
         for (int j = 1; j <= n; j++)
         {
-            if (i == j)
-                dis[i][j] = 0;
-            else
+            if (i != j)
                 dis[i][j] = INF;
+            else
+                dis[i][j] = 0;
         }
     }
 
