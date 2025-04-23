@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+    
 static const int INF = 99999;
 int dis[401][401];
 
