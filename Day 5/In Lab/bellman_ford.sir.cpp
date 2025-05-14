@@ -3,6 +3,14 @@ using namespace std;
 
 const int INF = 1e9;
 
+/*
+3 3
+0 1 2
+1 2 2
+0 2 5
+0
+*/
+
 int main()
 {
 

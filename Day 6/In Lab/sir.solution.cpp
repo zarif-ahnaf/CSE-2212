@@ -30,7 +30,7 @@ int main()
     cin >> n;
     cout << "Enter the total edge: " << endl;
     cin >> e;
-    cout << "Enter the edges wiht cost: " << endl;
+    cout << "Enter the edges with cost: " << endl;
     while (e--)
     {
         int u, v, cost;
