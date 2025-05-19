@@ -29,8 +29,8 @@ int main(){
     for(int k=1;k<=n;k++){
         for(int j=1;j<=n;j++){
             for(int i =1;i<=n;i++){
-                if(dist[i][j]>dist[i][k]+dist[k][j]){
-                    dist[i][k] = dist[i][k]+dist[k][j];
+                if(dist[i][j] > dist[i][k]+dist[k][j]){
+                    dist[i][j] = dist[i][k]+dist[k][j];
                     cout << "Distance " << i << " to " << j << " is " << dist[i][j] << endl;
                 }
             }
