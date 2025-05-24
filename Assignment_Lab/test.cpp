@@ -28,7 +28,6 @@ int main()
     int last_two_int = stoi(last_two);
 
     int capacity = last_two_int % 10;
-    cout << capacity << endl;
     vector<Item> data;
 
     for (int i = 0; i < n; i++)
@@ -45,18 +44,20 @@ int main()
 
     for (auto &item : data)
     {
+        if(capacity == 0) break;
+
         if (capacity >= item.weight)
         {
             // Take the whole item
             capacity -= item.weight;
             totalProfit += item.profit;
-            // cout << "Taken full: " << item.profit << "-" << item.weight << "-" << item.ratio << ", Remaining Capacity: " << capacity << endl;
+            cout << "Taken full: " << item.profit << "-" << item.weight << "-" << item.ratio << ", Remaining Capacity: " << capacity << endl;
         }
         else
         {
             double fraction = capacity / item.weight;
             totalProfit += item.profit * fraction;
-            // cout << "Taken fraction: " << item.profit * fraction << "-" << capacity << "-" << item.ratio << endl;
+            cout << "Taken fraction: " << item.profit * fraction << "-" << capacity << "-" << item.ratio << endl;
             break;
         }
     }
